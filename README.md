@@ -2,6 +2,38 @@
 
 **A local machine learning system combining energy forecasting models with LLM-powered natural-language explanations.**
 
+---
+
+## 💼 Business Case
+
+### The Problem
+Building managers struggle to understand and optimize energy consumption patterns. Without predictive insights and actionable explanations, they cannot:
+- Prepare for peak demand periods
+- Implement effective demand response strategies
+- Optimize HVAC settings based on predicted consumption
+- Make data-driven decisions about energy usage
+
+### The Solution
+**Energy-Wise** is a SaaS backend service that helps building managers and facility operators:
+
+1. **Monitor Consumption**: Ingests real-time device and HVAC energy data from building management systems into a relational database
+2. **Predict 168-hour Ahead**: Forecasts energy consumption for the next week (168 hours / 7 days) with high accuracy
+3. **Explain Patterns**: Uses LLM-powered analysis to explain *why* consumption changes are happening
+4. **Enable Demand Response**: Provides predictive insights to support demand response services by identifying optimal times to implement thermal inertia-based strategies (e.g., pre-cooling/pre-heating buildings)
+5. **Optimize HVAC Control**: Helps building operators adjust HVAC temperature settings based on predictions and thermal characteristics of the building
+
+### Target Use Case
+A facility manager wants to reduce peak demand charges while maintaining comfort. Energy-Wise predicts when consumption will spike and explains the drivers (e.g., occupancy, weather), enabling the operator to:
+- Adjust HVAC setpoints in advance using thermal inertia
+- Shift loads away from peak pricing periods
+- Participate in grid demand response programs
+- Understand consumption trends without manual analysis
+
+### Current Status
+This MVP is a **free-time small backend proof-of-concept** demonstrating the technical feasibility of this architecture. It provides the foundation for a production SaaS platform that would integrate with real building data sources.
+
+---
+
 ## What It Does
 
 - **Forecasts** energy consumption up to 168 hours ahead using XGBoost and Prophet models
@@ -55,7 +87,7 @@ python -m src.models.train
 ```
 
 **Expected output:**
-# Models are dumped into models/ directory
+Models are dumped into models/ directory
 ```
 MLflow run ID: 553addfadfadgfadgagfadf
 INFO - Training complete!
